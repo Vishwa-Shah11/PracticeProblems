@@ -8,6 +8,7 @@ def exactly_two(players):
         result: set of strings
     """
     #print(players)
+    '''
     count = 0
     for name in players:
         #print(name)
@@ -25,6 +26,15 @@ def exactly_two(players):
             s = set(l)
             #print(s)
     return s
+    '''
+
+    pairs=[('Tennis','Cricket','Badminton'),('Badminton','Tennis','Cricket'),('Cricket','Badminton','Tennis')]
+    names=set()
+    for player in players:
+        for s1,s2,s3 in pairs:
+            if(players[player][s1] and players[player][s2] and (not players[player][s3])):
+                names.add(player)
+    return names
 
 p1 = {'Ram': {'Tennis': False, 'Cricket': True, 'Badminton': True}, 'Rahim': {'Tennis': False, 'Cricket': True, 'Badminton': True}, 'Richard': {'Tennis': True, 'Cricket': False, 'Badminton': False}, 'Ravi': {'Tennis': False, 'Cricket': True, 'Badminton': True}, 'Rooney': {'Tennis': False, 'Cricket': False, 'Badminton': True}, 'Reshma': {'Tennis': False, 'Cricket': True, 'Badminton': False}, 'Radika': {'Tennis': False, 'Cricket': False, 'Badminton': False}, 'Ranjani': {'Tennis': True, 'Cricket': True, 'Badminton': True}, 'Rama': {'Tennis': False, 'Cricket': True, 'Badminton': True}, 'Rani': {'Tennis': True, 'Cricket': True, 'Badminton': False}}
 
